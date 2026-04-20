@@ -1,0 +1,18 @@
+2026-04-20 19:52:18,674 - INFO - \U0001f680 Gradio App Started
+2026-04-20 19:52:21,011 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-20 19:52:21,446 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-20 19:52:21,460 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-20 19:52:21,885 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-20 19:52:22,004 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-20 19:53:14,936 - INFO - Chat input received: hi
+2026-04-20 19:53:15,942 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-20 19:53:15,983 - INFO - Chat response sent: Hi! What are your expenses and income today?
+2026-04-20 19:53:44,669 - INFO - Chat input received: show balance
+2026-04-20 19:53:45,242 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-20 19:53:45,256 - INFO - Chat response sent: Please enter like: I spent 200 on food
+2026-04-20 19:59:11,618 - INFO - \U0001f680 Gradio App Started
+2026-04-20 19:59:14,687 - INFO - HTTP Request: GET http://127.0.0.1:7861/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-20 19:59:14,731 - INFO - HTTP Request: HEAD http://127.0.0.1:7861/ "HTTP/1.1 200 OK"
+2026-04-20 19:59:15,139 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-20 19:59:15,154 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-20 19:59:16,036 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"

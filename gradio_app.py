@@ -1,56 +1,93 @@
 import gradio as gr
 import pandas as pd
 import matplotlib.pyplot as plt
+import logging
+
+# 🔐 Logging setup
+logging.basicConfig(
+    filename="app.log",   # saves logs to file
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
+logging.info("🚀 Gradio App Started")
 
 # Import functions from backend
-from app import add_expense_logic, get_all_data, get_monthly_summary,get_yearly_summary
+from app import add_expense_logic, get_all_data, get_monthly_summary, get_yearly_summary
 
 
 # 💬 Chat function
 def chat_fn(message):
-    return add_expense_logic(message)
+    logging.info(f"Chat input received: {message}")
+    try:
+        response = add_expense_logic(message)
+        logging.info(f"Chat response sent: {response}")
+        return response
+    except Exception as e:
+        logging.error(f"Error in chat_fn: {e}")
+        return "Error processing your request"
 
 
 # 📋 Admin table
 def admin_fn():
-    data = get_all_data()
-    return pd.DataFrame(data)
+    logging.info("Admin panel requested data")
+    try:
+        data = get_all_data()
+        logging.info(f"Fetched {len(data)} records from database")
+        return pd.DataFrame(data)
+    except Exception as e:
+        logging.error(f"Error fetching admin data: {e}")
+        return pd.DataFrame()
 
 
-# 📊 Graph function
+# 📊 Monthly Graph function
 def monthly_graph_fn(month, year):
-    summary = get_monthly_summary(month, year)
+    logging.info(f"Generating monthly graph for Month={month}, Year={year}")
+    try:
+        summary = get_monthly_summary(month, year)
 
-    income = summary["income"]
-    expense = summary["expense"]
+        income = summary["income"]
+        expense = summary["expense"]
 
-    labels = ["Income", "Expense"]
-    values = [income, expense]
+        labels = ["Income", "Expense"]
+        values = [income, expense]
 
-    plt.figure()
+        plt.figure()
+        plt.pie(values, labels=labels, autopct='%1.1f%%')
+        plt.title(f"Month {month} Distribution")
 
-    plt.pie(values, labels=labels, autopct='%1.1f%%')
-    plt.title(f"Month {month} Distribution")
+        logging.info("Monthly graph generated successfully")
+        return plt
+    except Exception as e:
+        logging.error(f"Error generating monthly graph: {e}")
+        return plt
 
-    return plt
 
+# 📈 Yearly Graph function
 def yearly_graph_fn(year):
-    income, expense = get_yearly_summary(year)
+    logging.info(f"Generating yearly graph for Year={year}")
+    try:
+        income, expense = get_yearly_summary(year)
 
-    months = list(range(1, 13))
+        months = list(range(1, 13))
 
-    income_vals = [income.get(m, 0) for m in months]
-    expense_vals = [expense.get(m, 0) for m in months]
+        income_vals = [income.get(m, 0) for m in months]
+        expense_vals = [expense.get(m, 0) for m in months]
 
-    plt.figure()
-    plt.plot(months, income_vals, marker='o', label="Income")
-    plt.plot(months, expense_vals, marker='o', label="Expense")
+        plt.figure()
+        plt.plot(months, income_vals, marker='o', label="Income")
+        plt.plot(months, expense_vals, marker='o', label="Expense")
 
-    plt.legend()
-    plt.title(f"Year {year} Summary")
-    plt.grid()
+        plt.legend()
+        plt.title(f"Year {year} Summary")
+        plt.grid()
 
-    return plt
+        logging.info("Yearly graph generated successfully")
+        return plt
+    except Exception as e:
+        logging.error(f"Error generating yearly graph: {e}")
+        return plt
+
 
 # 🎨 UI
 with gr.Blocks() as demo:
@@ -102,3 +139,6 @@ with gr.Blocks() as demo:
 
 # 🚀 Launch
 demo.launch()
+
+
+
