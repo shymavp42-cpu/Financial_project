@@ -1,92 +1,124 @@
 import gradio as gr
 import pandas as pd
 import matplotlib.pyplot as plt
+import requests
 import logging
 
-# 🔐 Logging setup
+# 🔐 Logging
 logging.basicConfig(
-    filename="app.log",   # saves logs to file
+    filename="app.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
+BASE_URL = "http://127.0.0.1:8000"
+
 logging.info("🚀 Gradio App Started")
 
-# Import functions from backend
-from app import add_expense_logic, get_all_data, get_monthly_summary, get_yearly_summary
 
-
-# 💬 Chat function
+# 💬 CHAT FUNCTION
 def chat_fn(message):
-    logging.info(f"Chat input received: {message}")
+    logging.info(f"Chat input: {message}")
     try:
-        response = add_expense_logic(message)
-        logging.info(f"Chat response sent: {response}")
+        res = requests.post(
+            f"{BASE_URL}/chat",
+            json={"text": message}
+        )
+
+        response = res.json().get("response", str(res.json()))
+
+        logging.info(f"Response: {response}")
         return response
+
     except Exception as e:
-        logging.error(f"Error in chat_fn: {e}")
-        return "Error processing your request"
+        logging.error(f"Chat error: {e}")
+        return "❌ Error processing request"
 
 
-# 📋 Admin table
+# 📋 ADMIN DATA
 def admin_fn():
-    logging.info("Admin panel requested data")
+    logging.info("Fetching admin data")
     try:
-        data = get_all_data()
-        logging.info(f"Fetched {len(data)} records from database")
+        res = requests.get(f"{BASE_URL}/test")
+        data = res.json()
+
         return pd.DataFrame(data)
+
     except Exception as e:
-        logging.error(f"Error fetching admin data: {e}")
+        logging.error(f"Admin error: {e}")
         return pd.DataFrame()
 
 
-# 📊 Monthly Graph function
+# 📊 MONTHLY GRAPH
 def monthly_graph_fn(month, year):
-    logging.info(f"Generating monthly graph for Month={month}, Year={year}")
+    logging.info(f"Monthly graph for {month}-{year}")
+
     try:
-        summary = get_monthly_summary(month, year)
+        res = requests.get(
+            f"{BASE_URL}/summary?month={int(month)}&year={int(year)}"
+        )
 
-        income = summary["income"]
-        expense = summary["expense"]
+        data = res.json()
 
-        labels = ["Income", "Expense"]
-        values = [income, expense]
+        income = float(data.get("total_income", 0))
+        expense = float(data.get("total_expense", 0))
 
-        plt.figure()
-        plt.pie(values, labels=labels, autopct='%1.1f%%')
-        plt.title(f"Month {month} Distribution")
+        # ❗ FIX: handle empty data
+        if income == 0 and expense == 0:
+            return "⚠️ No data available for selected month"
 
-        logging.info("Monthly graph generated successfully")
-        return plt
+        fig, ax = plt.subplots()
+        ax.pie([income, expense],
+               labels=["Income", "Expense"],
+               autopct='%1.1f%%')
+
+        ax.set_title(f"Month {int(month)} Summary")
+
+        return fig
+
     except Exception as e:
-        logging.error(f"Error generating monthly graph: {e}")
-        return plt
+        logging.error(f"Monthly graph error: {e}")
+        return None
 
 
-# 📈 Yearly Graph function
+# 📈 YEARLY GRAPH
 def yearly_graph_fn(year):
-    logging.info(f"Generating yearly graph for Year={year}")
+    logging.info(f"Yearly graph for {year}")
+
     try:
-        income, expense = get_yearly_summary(year)
+        res = requests.get(f"{BASE_URL}/test")
+        data = res.json()
+
+        df = pd.DataFrame(data)
+
+        if df.empty:
+            return None
+
+        df["Date"] = pd.to_datetime(df["Date"])
+        df["Month"] = df["Date"].dt.month
+
+        income = df[df["Type"] == "income"].groupby("Month")["Amount"].sum()
+        Expense = df[df["Type"] == "expense"].groupby("Month")["Amount"].sum()
 
         months = list(range(1, 13))
 
         income_vals = [income.get(m, 0) for m in months]
-        expense_vals = [expense.get(m, 0) for m in months]
+        expense_vals = [Expense.get(m, 0) for m in months]
 
-        plt.figure()
-        plt.plot(months, income_vals, marker='o', label="Income")
-        plt.plot(months, expense_vals, marker='o', label="Expense")
+        fig, ax = plt.subplots()
+        ax.plot(months, income_vals, marker='o', label="Income")
+        ax.plot(months, expense_vals, marker='o', label="Expense")
 
-        plt.legend()
-        plt.title(f"Year {year} Summary")
-        plt.grid()
+        ax.legend()
+        ax.set_title(f"Year {int(year)} Summary")
+        ax.set_xlabel("Month")
+        ax.set_ylabel("Amount")
 
-        logging.info("Yearly graph generated successfully")
-        return plt
+        return fig
+
     except Exception as e:
-        logging.error(f"Error generating yearly graph: {e}")
-        return plt
+        logging.error(f"Yearly graph error: {e}")
+        return None
 
 
 # 🎨 UI
@@ -94,24 +126,24 @@ with gr.Blocks() as demo:
 
     gr.Markdown("## 💰 Finance Chatbot")
 
-    # 💬 Chat
+    # 💬 CHAT
     chat_input = gr.Textbox(label="Enter message")
     chat_output = gr.Textbox(label="Response")
 
     chat_input.submit(chat_fn, chat_input, chat_output)
 
-    # 📋 Admin Panel
+    # 📋 ADMIN
     gr.Markdown("## 📋 Admin Panel")
     table = gr.Dataframe()
     btn = gr.Button("Load Data")
 
     btn.click(admin_fn, outputs=table)
 
-    # 📊 Monthly Graph
+    # 📊 MONTHLY GRAPH
     gr.Markdown("## 📊 Monthly Graph")
 
-    month_input = gr.Number(label="Enter Month (1-12)")
-    year_input1 = gr.Number(label="Enter Year")
+    month_input = gr.Number(label="Month (1-12)")
+    year_input1 = gr.Number(label="Year")
 
     monthly_graph = gr.Plot()
     monthly_btn = gr.Button("Show Monthly Graph")
@@ -122,10 +154,10 @@ with gr.Blocks() as demo:
         outputs=monthly_graph
     )
 
-    # 📈 Yearly Graph
+    # 📈 YEARLY GRAPH
     gr.Markdown("## 📈 Yearly Graph")
 
-    year_input2 = gr.Number(label="Enter Year")
+    year_input2 = gr.Number(label="Year")
 
     yearly_graph = gr.Plot()
     yearly_btn = gr.Button("Show Yearly Graph")
@@ -137,8 +169,4 @@ with gr.Blocks() as demo:
     )
 
 
-# 🚀 Launch
 demo.launch()
-
-
-

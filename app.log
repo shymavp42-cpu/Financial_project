@@ -16,3 +16,206 @@
 2026-04-20 19:59:15,139 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
 2026-04-20 19:59:15,154 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
 2026-04-20 19:59:16,036 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 18:05:26,066 - INFO - \U0001f680 Gradio App Started
+2026-04-23 18:05:28,320 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 18:05:28,529 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 18:05:29,063 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 18:05:29,144 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 18:05:29,456 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 18:06:15,348 - INFO - Chat input received: show summary
+2026-04-23 18:06:16,023 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 18:06:16,037 - ERROR - Error in chat_fn: name 'Return' is not defined
+2026-04-23 18:06:32,538 - INFO - Chat input received: show expenses
+2026-04-23 18:06:32,930 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 18:06:32,962 - ERROR - Error in chat_fn: name 'Return' is not defined
+2026-04-23 18:06:40,599 - INFO - Chat input received: show income
+2026-04-23 18:06:41,122 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 18:06:41,125 - ERROR - Error in chat_fn: name 'Return' is not defined
+2026-04-23 18:06:45,191 - INFO - Chat input received: hi
+2026-04-23 18:06:45,443 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 18:06:45,444 - ERROR - Error in chat_fn: name 'Return' is not defined
+2026-04-23 18:06:57,335 - INFO - Chat input received: i spent 100 on petrol
+2026-04-23 18:06:57,802 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 18:06:57,808 - ERROR - Error in chat_fn: name 'Return' is not defined
+2026-04-23 18:51:10,565 - INFO - \U0001f680 Gradio App Started
+2026-04-23 18:51:12,386 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 18:51:12,626 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 18:51:12,691 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 18:51:13,112 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 18:51:13,449 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 18:51:31,989 - INFO - Chat input received: show summary
+2026-04-23 18:51:32,456 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 18:51:32,475 - INFO - Chat response sent: COMMAND: summary
+2026-04-23 19:08:10,920 - INFO - \U0001f680 Gradio App Started
+2026-04-23 19:08:12,640 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 19:08:12,654 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 19:08:13,031 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 19:08:13,199 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 19:08:14,065 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 19:08:36,080 - INFO - Chat input received: show summary
+2026-04-23 19:08:36,699 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 19:08:36,716 - INFO - Chat response sent: COMMAND: summary.
+2026-04-23 19:33:00,509 - INFO - \U0001f680 Gradio App Started
+2026-04-23 19:33:02,339 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 19:33:02,589 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 19:33:02,822 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 19:33:03,330 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 19:33:03,550 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 19:33:27,834 - INFO - Chat input received: show summary
+2026-04-23 19:33:31,277 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 19:33:31,297 - INFO - Chat response sent: COMMAND: summary
+2026-04-23 19:35:19,407 - INFO - Chat input received: show summary
+2026-04-23 19:35:19,995 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 19:35:20,032 - INFO - Chat response sent: COMMAND: summary
+2026-04-23 19:43:16,195 - INFO - \U0001f680 Gradio App Started
+2026-04-23 19:43:17,971 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 19:43:18,007 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 19:43:18,478 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 19:43:18,514 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 19:43:19,184 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 19:43:31,969 - INFO - Chat input received: show summary
+2026-04-23 19:43:32,918 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 19:43:32,951 - INFO - Chat response sent: \u274c Error: too many values to unpack (expected 4)
+2026-04-23 19:57:32,487 - INFO - \U0001f680 Gradio App Started
+2026-04-23 19:57:34,235 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 19:57:34,268 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 19:57:34,637 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 19:57:34,832 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 19:57:36,370 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 19:57:44,566 - INFO - Chat input received: show summary
+2026-04-23 19:57:44,566 - INFO - Chat response sent: Use the Summary section below to view monthly data
+2026-04-23 20:28:06,570 - INFO - \U0001f680 Gradio App Started
+2026-04-23 20:28:07,485 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 20:28:07,705 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 20:28:07,770 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 20:28:08,194 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 20:28:08,736 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 20:28:24,034 - INFO - Chat input: show summary
+2026-04-23 20:28:24,042 - INFO - Response: {'detail': 'Not Found'}
+2026-04-23 20:29:06,415 - INFO - Chat input: show January summary
+2026-04-23 20:29:06,420 - INFO - Response: {'detail': 'Not Found'}
+2026-04-23 20:37:17,925 - INFO - \U0001f680 Gradio App Started
+2026-04-23 20:37:18,845 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 20:37:18,887 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 20:37:20,411 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 20:37:20,429 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 20:37:20,979 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 20:37:53,910 - INFO - Chat input: show January summary
+2026-04-23 20:37:53,918 - INFO - Response: {'detail': 'Not Found'}
+2026-04-23 20:54:49,382 - INFO - \U0001f680 Gradio App Started
+2026-04-23 20:54:50,242 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 20:54:50,277 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 20:54:50,803 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 20:54:51,294 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 20:54:51,908 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 20:55:13,046 - INFO - Chat input: show January summary
+2026-04-23 20:55:13,055 - INFO - Response: {'detail': 'Not Found'}
+2026-04-23 20:58:04,001 - INFO - \U0001f680 Gradio App Started
+2026-04-23 20:58:04,856 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 20:58:04,891 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 20:58:05,165 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 20:58:05,445 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 20:58:06,059 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 20:58:21,528 - INFO - Chat input: show January summary 
+2026-04-23 20:58:21,536 - INFO - Response: {'detail': 'Not Found'}
+2026-04-23 21:05:50,526 - INFO - \U0001f680 Gradio App Started
+2026-04-23 21:05:51,374 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 21:05:51,410 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 21:05:51,752 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 21:05:51,981 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 21:05:52,455 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 21:06:37,180 - INFO - Chat input: show January summary
+2026-04-23 21:06:39,501 - INFO - Response: \u274c Error: {'message': "Could not find the table 'public.expenses' in the schema cache", 'code': 'PGRST205', 'hint': "Perhaps you meant the table 'public.Expenses'", 'details': None}
+2026-04-23 21:14:54,169 - INFO - \U0001f680 Gradio App Started
+2026-04-23 21:14:55,046 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 21:14:55,066 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 21:14:56,116 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 21:14:56,125 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 21:14:56,341 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 21:15:18,148 - INFO - Chat input: show January summary
+2026-04-23 21:15:20,560 - INFO - Response: \U0001f4ca Jan 2026 Summary
+\U0001f4b0 Income: \u20b90
+\U0001f4b8 Expense: \u20b90
+\U0001f4c9 Balance: \u20b90
+2026-04-23 21:18:40,492 - INFO - Monthly graph for 4-2026
+2026-04-23 21:18:40,552 - ERROR - Monthly graph error: cannot convert float NaN to integer
+2026-04-23 21:18:44,774 - INFO - Monthly graph for 4-2026
+2026-04-23 21:18:44,793 - ERROR - Monthly graph error: cannot convert float NaN to integer
+2026-04-23 21:18:50,854 - INFO - Fetching admin data
+2026-04-23 21:19:02,340 - INFO - Monthly graph for 4-2026
+2026-04-23 21:19:02,358 - ERROR - Monthly graph error: cannot convert float NaN to integer
+2026-04-23 21:19:10,762 - INFO - Yearly graph for 2026
+2026-04-23 21:33:47,877 - INFO - \U0001f680 Gradio App Started
+2026-04-23 21:33:48,904 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 21:33:48,952 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 21:33:49,214 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 21:33:49,471 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 21:33:50,116 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 21:34:04,436 - INFO - Monthly graph for 4-2026
+2026-04-23 21:34:30,116 - INFO - Monthly graph for 3-2026
+2026-04-23 21:35:07,585 - INFO - Chat input: show April summary
+2026-04-23 21:35:08,257 - INFO - Response: \U0001f4ca Apr 2026 Summary
+\U0001f4b0 Income: \u20b90
+\U0001f4b8 Expense: \u20b90
+\U0001f4c9 Balance: \u20b90
+2026-04-23 21:35:17,101 - INFO - Fetching admin data
+2026-04-23 21:35:41,210 - INFO - Chat input: show March summary
+2026-04-23 21:35:42,180 - INFO - Response: \U0001f4ca Mar 2026 Summary
+\U0001f4b0 Income: \u20b930000
+\U0001f4b8 Expense: \u20b90
+\U0001f4c9 Balance: \u20b930000
+2026-04-23 21:48:48,334 - INFO - \U0001f680 Gradio App Started
+2026-04-23 21:48:49,381 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 21:48:49,426 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 21:48:50,173 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 21:48:50,409 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 21:48:50,467 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 21:49:03,814 - INFO - Chat input: shows march summary
+2026-04-23 21:49:06,830 - INFO - Response: \U0001f4ca Mar 2026 Summary
+\U0001f4b0 Income: \u20b930000
+\U0001f4b8 Expense: \u20b95650
+\U0001f4c9 Balance: \u20b924350
+2026-04-23 21:49:24,109 - INFO - Monthly graph for 3-2026
+2026-04-23 21:49:31,085 - INFO - Yearly graph for 2024
+2026-04-23 22:39:31,583 - INFO - Chat input: show march summary
+2026-04-23 22:46:16,585 - INFO - \U0001f680 Gradio App Started
+2026-04-23 22:46:17,183 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-04-23 22:46:17,195 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-04-23 22:46:17,491 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-04-23 22:46:17,673 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-04-23 22:46:18,259 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-23 22:46:29,339 - INFO - Chat input: show march summary
+2026-04-23 23:05:30,460 - INFO - Response: \u274c Error: Error code: 400 - {'error': {'message': 'The model `llama3-70b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-04-23 23:05:30,467 - INFO - Chat input: shows march summary 2026
+2026-04-23 23:05:30,560 - INFO - Response: \u274c Error: Error code: 400 - {'error': {'message': 'The model `llama3-70b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-04-23 23:05:45,615 - INFO - Chat input: shows march summary 
+2026-04-23 23:05:45,863 - INFO - Response: \u274c Error: Error code: 400 - {'error': {'message': 'The model `llama3-70b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-04-23 23:07:32,028 - INFO - Chat input: show march summary
+2026-04-23 23:07:32,538 - INFO - Response: \u274c Error: Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-04-23 23:10:16,099 - INFO - Chat input: show march summary
+2026-04-23 23:10:16,926 - INFO - Response: \u274c Error: 'year'
+2026-04-23 23:10:22,942 - INFO - Chat input: show march summary 2026
+2026-04-23 23:10:25,716 - INFO - Response: \U0001f4ca Monthly Summary
+\U0001f4b0 Income: \u20b90
+\U0001f4b8 Expense: \u20b90
+\U0001f4c9 Balance: \u20b90
+2026-04-23 23:10:32,412 - INFO - Fetching admin data
+2026-04-23 23:21:22,483 - INFO - Chat input: show march summary 2026
+2026-04-23 23:21:23,298 - INFO - Response: \u274c Error: Expecting value: line 1 column 1 (char 0)
+2026-04-23 23:21:28,003 - INFO - Chat input: show march summary 
+2026-04-23 23:21:30,345 - INFO - Response: \U0001f4ca Monthly Summary
+\U0001f4b0 Income: \u20b90
+\U0001f4b8 Expense: \u20b90
+\U0001f4c9 Balance: \u20b90
+2026-04-23 23:21:40,006 - INFO - Chat input: show march 2026 summary 
+2026-04-23 23:21:41,376 - INFO - Response: \U0001f4ca Monthly Summary
+\U0001f4b0 Income: \u20b90
+\U0001f4b8 Expense: \u20b90
+\U0001f4c9 Balance: \u20b90
+2026-04-23 23:27:54,301 - INFO - Chat input: show March 2026 summary
+2026-04-23 23:27:57,352 - INFO - Response: \U0001f4ca Monthly Summary
+\U0001f4b0 Income: \u20b930000
+\U0001f4b8 Expense: \u20b95650
+\U0001f4c9 Balance: \u20b924350
+2026-04-23 23:28:23,654 - INFO - Monthly graph for 3-2026
+2026-04-23 23:28:31,703 - INFO - Yearly graph for 2024
