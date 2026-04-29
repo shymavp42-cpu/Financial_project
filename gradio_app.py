@@ -16,7 +16,7 @@ BASE_URL = "http://127.0.0.1:8000"
 logging.info("🚀 Gradio App Started")
 
 
-# 💬 CHAT FUNCTION
+# 💬 CHAT FUNCTION (backend call)
 def chat_fn(message):
     logging.info(f"Chat input: {message}")
     try:
@@ -25,14 +25,30 @@ def chat_fn(message):
             json={"text": message}
         )
 
-        response = res.json().get("response", str(res.json()))
+        data = res.json()
+        response = data.get("response", "No response")
+
+        # ✅ Remove unwanted quotes
+        if isinstance(response, str):
+            response = response.strip('"').strip("'")
 
         logging.info(f"Response: {response}")
+
         return response
 
     except Exception as e:
         logging.error(f"Chat error: {e}")
-        return "❌ Error processing request"
+        return "❌ Error connecting to backend"
+
+
+# 💬 CHAT UI HANDLER
+def chat_ui(message, history):
+    response = chat_fn(message)
+
+    history.append({"role": "user", "content": message})
+    history.append({"role": "assistant", "content": response})
+
+    return history, ""
 
 
 # 📋 ADMIN DATA
@@ -41,7 +57,6 @@ def admin_fn():
     try:
         res = requests.get(f"{BASE_URL}/test")
         data = res.json()
-
         return pd.DataFrame(data)
 
     except Exception as e:
@@ -60,17 +75,22 @@ def monthly_graph_fn(month, year):
 
         data = res.json()
 
+        if "error" in data:
+            return f"❌ {data['error']}"
+
         income = float(data.get("total_income", 0))
         expense = float(data.get("total_expense", 0))
 
-        # ❗ FIX: handle empty data
         if income == 0 and expense == 0:
-            return "⚠️ No data available for selected month"
+            return "⚠️ No data available for this month"
 
         fig, ax = plt.subplots()
-        ax.pie([income, expense],
-               labels=["Income", "Expense"],
-               autopct='%1.1f%%')
+
+        ax.pie(
+            [income, expense],
+            labels=["Income", "Expense"],
+            autopct='%1.1f%%'
+        )
 
         ax.set_title(f"Month {int(month)} Summary")
 
@@ -92,20 +112,24 @@ def yearly_graph_fn(year):
         df = pd.DataFrame(data)
 
         if df.empty:
-            return None
+            return "⚠️ No data available"
 
-        df["Date"] = pd.to_datetime(df["Date"])
+        df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
         df["Month"] = df["Date"].dt.month
+        df["Year"] = df["Date"].dt.year
+
+        df = df[df["Year"] == int(year)]
 
         income = df[df["Type"] == "income"].groupby("Month")["Amount"].sum()
-        Expense = df[df["Type"] == "expense"].groupby("Month")["Amount"].sum()
+        expense = df[df["Type"] == "expense"].groupby("Month")["Amount"].sum()
 
         months = list(range(1, 13))
 
         income_vals = [income.get(m, 0) for m in months]
-        expense_vals = [Expense.get(m, 0) for m in months]
+        expense_vals = [expense.get(m, 0) for m in months]
 
         fig, ax = plt.subplots()
+
         ax.plot(months, income_vals, marker='o', label="Income")
         ax.plot(months, expense_vals, marker='o', label="Expense")
 
@@ -126,13 +150,13 @@ with gr.Blocks() as demo:
 
     gr.Markdown("## 💰 Finance Chatbot")
 
-    # 💬 CHAT
+    # 💬 CHAT UI (UPDATED)
     chat_input = gr.Textbox(label="Enter message")
     chat_output = gr.Textbox(label="Response")
 
-    chat_input.submit(chat_fn, chat_input, chat_output)
+    chat_input.submit(chat_fn, inputs=chat_input, outputs=chat_output)
 
-    # 📋 ADMIN
+    # 📋 ADMIN PANEL
     gr.Markdown("## 📋 Admin Panel")
     table = gr.Dataframe()
     btn = gr.Button("Load Data")
@@ -169,4 +193,5 @@ with gr.Blocks() as demo:
     )
 
 
+# 🚀 Launch
 demo.launch()

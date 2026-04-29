@@ -10,7 +10,7 @@ def add_expense(supabase, amount, category, type_, date):
 
 
 def get_month_summary(supabase, month, year):
-    response = supabase.table("Expenses").select("*").execute()
+    response = supabase.table("Expenses").select("Amount,Type,Date").execute()
     records = response.data
 
     income = 0
@@ -20,7 +20,10 @@ def get_month_summary(supabase, month, year):
         if not r.get("Date"):
             continue
 
-        y, m, _ = map(int, r["Date"].split("-"))
+        try:
+            y, m, _ = map(int, r["Date"].split("-"))
+        except:
+            continue
 
         if y == year and m == month:
             if r["Type"].strip().lower() == "income":
@@ -32,7 +35,7 @@ def get_month_summary(supabase, month, year):
 
 
 def get_balance(supabase):
-    response = supabase.table("Expenses").select("*").execute()
+    response = supabase.table("Expenses").select("Amount,Type").execute()
     records = response.data
 
     income = sum(r["Amount"] for r in records if r["Type"].lower() == "income")
