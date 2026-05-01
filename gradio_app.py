@@ -34,14 +34,14 @@ def chat_fn(message):
 
         logging.info(f"Response: {response}")
 
-        return response
+        return response, ""   # ✅ clears input box
 
     except Exception as e:
         logging.error(f"Chat error: {e}")
-        return "❌ Error connecting to backend"
+        return "❌ Error connecting to backend", ""
 
 
-# 💬 CHAT UI HANDLER
+# 💬 CHAT UI HANDLER (kept as it is)
 def chat_ui(message, history):
     response = chat_fn(message)
 
@@ -150,11 +150,12 @@ with gr.Blocks() as demo:
 
     gr.Markdown("## 💰 Finance Chatbot")
 
-    # 💬 CHAT UI (UPDATED)
+    # 💬 CHAT UI
     chat_input = gr.Textbox(label="Enter message")
     chat_output = gr.Textbox(label="Response")
 
-    chat_input.submit(chat_fn, inputs=chat_input, outputs=chat_output)
+    # ✅ UPDATED LINE (clears input)
+    chat_input.submit(chat_fn, inputs=chat_input, outputs=[chat_output, chat_input])
 
     # 📋 ADMIN PANEL
     gr.Markdown("## 📋 Admin Panel")

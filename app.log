@@ -323,3 +323,199 @@
 2026-04-29 19:55:47,670 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
 2026-04-29 19:55:47,988 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
 2026-04-29 19:55:48,555 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-04-29 19:56:20,670 - INFO - Chat input: i spent 200 on food
+2026-04-29 19:56:23,399 - INFO - Response: \u2705 Added \u20b9200 for food.
+2026-04-29 19:57:04,036 - INFO - Chat input: hi
+2026-04-29 19:57:04,431 - INFO - Response: I've added the expense for food. What else can I help you with?
+2026-05-01 14:52:28,686 - INFO - \U0001f680 Gradio App Started
+2026-05-01 14:52:29,982 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-05-01 14:52:30,406 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-05-01 14:52:53,858 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-05-01 14:52:54,416 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-05-01 14:53:12,655 - INFO - Chat input: hi
+2026-05-01 14:54:06,142 - INFO - Response: \u274c Error: Connection error.
+2026-05-01 14:56:12,480 - INFO - Chat input: hi
+2026-05-01 14:56:14,264 - INFO - Response: I'm here to help you track your finances. What would you like to do today?
+2026-05-01 14:56:45,630 - INFO - Chat input: i don't know what are the expenses that i had today
+2026-05-01 14:56:49,074 - INFO - Response: \U0001f3e6 Total Balance: \u20b9-58815
+2026-05-01 14:57:22,735 - INFO - Chat input: which balance
+2026-05-01 14:57:24,256 - INFO - Response: You asked about expenses for today. To get a list of expenses, I need to know the date. Would you like to specify a date or use today's date (2026-05-01) by default?
+2026-05-01 14:58:22,568 - INFO - Chat input: no when i told i dont know the expenses today you give me some balance which balance is that
+2026-05-01 14:58:24,488 - INFO - Response: \U0001f3e6 Total Balance: \u20b9-58815
+2026-05-01 14:58:38,700 - INFO - Chat input: which balance is that
+2026-05-01 14:58:39,241 - INFO - Response: The balance I provided earlier is the total current balance. It's the sum of all your income and expenses, including today's transactions.
+2026-05-01 14:59:01,376 - INFO - Chat input: you mean i dont have any money left
+2026-05-01 14:59:02,630 - INFO - Response: \U0001f3e6 Total Balance: \u20b9-58815
+2026-05-01 14:59:10,609 - INFO - Chat input: you mean i don't have any money left
+2026-05-01 14:59:11,045 - INFO - Response: It seems that way. Your current balance is negative \u20b958,815.
+2026-05-01 14:59:56,551 - INFO - Chat input: you mean all over balance or any specific month balance
+2026-05-01 14:59:57,843 - INFO - Response: \U0001f4ca 5/2024: +\u20b90 | -\u20b90 | Bal: \u20b90
+2026-05-01 15:00:30,030 - INFO - Chat input: in this year 2026 is there any balance is there
+2026-05-01 15:00:31,178 - INFO - Response: \U0001f4ca 5/2026: +\u20b90 | -\u20b90 | Bal: \u20b90
+2026-05-01 15:00:57,478 - INFO - Chat input: i mean all over this year not any specific month
+2026-05-01 15:00:58,335 - INFO - Response: \U0001f3e6 Total Balance: \u20b9-58815
+2026-05-01 15:01:10,083 - INFO - Fetching admin data
+2026-05-01 15:02:07,951 - INFO - Chat input: i got my salary today 50000
+2026-05-01 15:02:09,173 - INFO - Response: \u2705 Added \u20b950000 for salary.
+2026-05-01 15:02:29,635 - INFO - Chat input: now tell how munch balance is there
+2026-05-01 15:02:31,306 - INFO - Response: \U0001f3e6 Total Balance: \u20b9-8815
+2026-05-01 15:02:52,674 - INFO - Chat input: from freelance i got 35000
+2026-05-01 15:02:53,969 - INFO - Response: \u2705 Added \u20b935000 for freelance.
+2026-05-01 15:03:12,773 - INFO - Chat input: now tell me the balance
+2026-05-01 15:03:14,206 - INFO - Response: \U0001f3e6 Total Balance: \u20b926185
+2026-05-01 15:03:33,839 - INFO - Chat input: can you show me the summary of this year
+2026-05-01 15:03:35,556 - INFO - Response: \U0001f4ca 5/2026: +\u20b985000 | -\u20b90 | Bal: \u20b985000
+2026-05-01 15:04:00,239 - INFO - Chat input: how come 85000
+2026-05-01 15:04:01,305 - INFO - Response: \U0001f4ca 5/2026: +\u20b985000 | -\u20b90 | Bal: \u20b985000
+2026-05-01 15:04:08,507 - INFO - Chat input: how 
+2026-05-01 15:04:09,048 - INFO - Response: It seems like you're trying to ask a question, but it got cut off. Could you please rephrase or provide more context so I can better understand and assist you?
+2026-05-01 15:04:37,785 - INFO - Chat input: how can i get this year balance 85000
+2026-05-01 15:04:38,875 - INFO - Response: \U0001f3e6 Total Balance: \u20b926185
+2026-05-01 15:05:02,823 - INFO - Chat input: no you showed me the summary of this year 85000 how
+2026-05-01 15:05:03,774 - INFO - Response: \u2705 Added \u20b985000 for salary.
+2026-05-01 15:05:26,204 - INFO - Chat input: delete what you added now
+2026-05-01 15:05:26,824 - INFO - Response: How much did it cost?
+2026-05-01 15:05:33,700 - INFO - Chat input: what
+2026-05-01 15:05:34,182 - INFO - Response: It seems like you didn't provide enough information. Could you please clarify what you would like to know or what action you would like to take?
+2026-05-01 15:28:49,887 - INFO - \U0001f680 Gradio App Started
+2026-05-01 15:28:50,884 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-05-01 15:28:51,084 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-05-01 15:28:51,329 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-05-01 15:28:51,654 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-05-01 15:28:52,049 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-05-01 15:29:01,443 - INFO - Chat input: hi
+2026-05-01 15:29:02,352 - INFO - Response: I'm here to help you track your finances. What would you like to do today?
+2026-05-01 15:29:18,048 - INFO - Chat input: show me the summary of this year
+2026-05-01 15:29:18,679 - INFO - Response: \U0001f4ca That looks like a summary request , not a transaction.
+2026-05-01 15:29:31,376 - INFO - Chat input: yes
+2026-05-01 15:29:34,015 - INFO - Response: \U0001f4ca 1/2026 \u2192 Income: \u20b985000, Expense: \u20b90, Balance: \u20b985000
+2026-05-01 15:30:05,895 - INFO - Fetching admin data
+2026-05-01 15:34:50,175 - INFO - \U0001f680 Gradio App Started
+2026-05-01 15:34:51,068 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-05-01 15:34:51,110 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-05-01 15:34:51,432 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-05-01 15:34:51,824 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-05-01 15:34:52,035 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-05-01 15:34:59,456 - INFO - Chat input: hi
+2026-05-01 15:35:02,480 - INFO - Response: \U0001f3e6 Total Balance: \u20b9111185
+2026-05-01 15:35:17,361 - INFO - Chat input: hi
+2026-05-01 15:35:17,896 - INFO - Response: I'm here to help with your personal finance questions. What would you like to do today?
+2026-05-01 15:35:35,145 - INFO - Chat input: show me the summary of this year
+2026-05-01 15:35:36,224 - INFO - Response: \U0001f4ca Year 2026 \u2192 Income: \u20b9200000, Expense: \u20b913215, Balance: \u20b9186785
+2026-05-01 15:36:01,708 - INFO - Chat input: how to control my expenses
+2026-05-01 15:36:02,326 - INFO - Response: To control your expenses, let's start by tracking them. Can you tell me about your first expense today? What was it and how much did it cost?
+2026-05-01 15:36:43,962 - INFO - Chat input: as per the expenses that i had tell me how to control my highest expenses
+2026-05-01 15:36:45,021 - INFO - Response: \U0001f4ca Year 2026 \u2192 Income: \u20b9200000, Expense: \u20b913215, Balance: \u20b9186785
+2026-05-01 15:37:23,837 - INFO - Chat input: which category that i need to control my using
+2026-05-01 15:37:24,898 - INFO - Response: \U0001f4ca Year 2026 \u2192 Income: \u20b9200000, Expense: \u20b913215, Balance: \u20b9186785
+2026-05-01 15:38:03,734 - INFO - Chat input: which category that i need to control for less expense
+2026-05-01 15:38:04,634 - INFO - Response: \U0001f4ca Year 2026 \u2192 Income: \u20b9200000, Expense: \u20b913215, Balance: \u20b9186785
+2026-05-01 15:47:10,863 - INFO - \U0001f680 Gradio App Started
+2026-05-01 15:47:11,687 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-05-01 15:47:11,724 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-05-01 15:47:11,976 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-05-01 15:47:12,248 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-05-01 15:47:12,745 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-05-01 15:47:25,083 - INFO - Chat input: hi
+2026-05-01 15:47:25,870 - INFO - Response: I'm an expert Personal Finance AI Assistant. I can help you track your money, log expenses and income, provide monthly summaries and current balances, and more. What do you need help with today?
+2026-05-01 15:47:46,869 - INFO - Chat input: show summary of this year
+2026-05-01 15:47:49,307 - INFO - Response: \U0001f4ca 5/2026 \u2192 Income: \u20b985000, Expense: \u20b90, Balance: \u20b985000
+2026-05-01 15:48:32,053 - INFO - Chat input: tell me which category that i need to limit using
+2026-05-01 15:48:35,107 - INFO - Response: \U0001f4ca 5/2026 \u2192 Income: \u20b985000, Expense: \u20b90, Balance: \u20b985000
+2026-05-01 15:48:48,626 - INFO - Chat input: tell me which category that i need to limit using
+2026-05-01 15:48:51,785 - INFO - Response: \U0001f4ca 5/2026 \u2192 Income: \u20b985000, Expense: \u20b90, Balance: \u20b985000
+2026-05-01 15:49:39,590 - INFO - Fetching admin data
+2026-05-01 15:53:07,522 - INFO - Chat input: hi
+2026-05-01 15:53:08,677 - INFO - Response: Hello. I'm here to help with your personal finance questions. What would you like to do today?
+2026-05-01 15:53:22,528 - INFO - Chat input: shoe me the summary of this year
+2026-05-01 15:53:26,520 - INFO - Response: \U0001f4ca Year Summary: +\u20b9200000 | -\u20b988115 | Balance: \u20b9111885
+2026-05-01 15:53:48,328 - INFO - Fetching admin data
+2026-05-01 15:54:00,166 - INFO - Chat input: shoe me the summary of this 2024
+2026-05-01 15:54:01,184 - INFO - Response: \U0001f4ca 12/2024 \u2192 Income \u20b90, Expense \u20b90, Balance \u20b90
+2026-05-01 15:54:10,024 - INFO - Chat input: shoe me the summary of this 2026
+2026-05-01 15:54:11,609 - INFO - Response: \U0001f4ca 5/2026 \u2192 Income \u20b985000, Expense \u20b90, Balance \u20b985000
+2026-05-01 15:54:35,686 - INFO - Chat input: which category should i limit using
+2026-05-01 15:54:36,283 - INFO - Response: \U0001f4a1 You are spending the most on 'salary'. Try reducing this category.
+2026-05-01 15:55:00,316 - INFO - Chat input: can you delete the one last added
+2026-05-01 15:55:01,534 - INFO - Response: \U0001f4ca 5/2026 \u2192 Income \u20b985000, Expense \u20b90, Balance \u20b985000
+2026-05-01 15:55:18,142 - INFO - Chat input: can you give me some advice 
+2026-05-01 15:55:18,742 - INFO - Response: To give you advice, I'll need to consider your current financial situation. However, I don't have any information about your income, expenses, or financial goals. 
+
+Can you tell me a bit about your financial situation? What are your income and expenses like? Do you have any specific financial goals, such as saving for a down payment on a house or paying off debt?
+2026-05-01 15:55:49,877 - INFO - Chat input: i need to save 1000 all month give me a advice for that
+2026-05-01 15:55:50,441 - INFO - Response: To save $1000 per month, consider the 50/30/20 rule. Allocate 50% of your income towards necessary expenses, 30% for discretionary spending, and 20% for saving and debt repayment. You can also try to reduce unnecessary expenses and increase your income by taking on a side job or asking for a raise.
+2026-05-01 16:05:35,518 - INFO - Chat input: show me the summary of this year
+2026-05-01 16:05:38,884 - INFO - Response: \U0001f4ca 2026 Summary: +\u20b9200000 | -\u20b974900 | Balance \u20b9125100
+2026-05-01 16:05:48,418 - INFO - Chat input: show me the summary of 2024
+2026-05-01 16:05:49,978 - INFO - Response: \U0001f4ca 12/2024 \u2192 Income \u20b90, Expense \u20b90, Balance \u20b90
+2026-05-01 16:06:15,679 - INFO - Chat input: give me some advice to save 1000 every month
+2026-05-01 16:06:16,467 - INFO - Response: To save $1000 per month, consider the following steps:
+
+1. **Track your expenses**: Understand where your money is going to identify areas for reduction.
+2. **Create a budget**: Allocate 50-30-20: 50% for necessities, 30% for discretionary spending, and 20% for saving and debt repayment.
+3. **Automate savings**: Set up a separate savings account and transfer $1000 from your checking account on the same day you receive your paycheck.
+4. **Cut expenses**: Reduce unnecessary expenses, such as dining out or subscription services, to free up more money for savings.
+5. **Increase income**: Explore ways to boost your income, like taking on a side job, selling unwanted items, or asking for a raise.
+6. **Avoid impulse purchases**: Practice delayed gratification and think twice before making non-essential purchases.
+7. **Monitor progress**: Regularly review your budget and adjust as needed to stay on track.
+
+Remember, saving $1000 per month requires discipline and patience, but with a solid plan and consistent effort, you can achieve your goal.
+2026-05-01 16:06:29,955 - INFO - Chat input: summary of 2024
+2026-05-01 16:06:31,332 - INFO - Response: \U0001f4ca 12/2024 \u2192 Income \u20b90, Expense \u20b90, Balance \u20b90
+2026-05-01 16:06:34,573 - INFO - Fetching admin data
+2026-05-01 16:16:03,592 - INFO - Chat input: summary of 2024
+2026-05-01 16:16:06,905 - INFO - Response: \U0001f4ca 12/2024 \u2192 Income \u20b90, Expense \u20b90, Balance \u20b90
+2026-05-01 16:16:16,808 - INFO - Chat input: summary of 2026
+2026-05-01 16:16:18,771 - INFO - Response: \U0001f4ca 5/2026 \u2192 Income \u20b985000, Expense \u20b90, Balance \u20b985000
+2026-05-01 16:16:32,986 - INFO - Chat input: show summary of 2026
+2026-05-01 16:16:34,206 - INFO - Response: \U0001f4ca 5/2026 \u2192 Income \u20b985000, Expense \u20b90, Balance \u20b985000
+2026-05-01 16:16:39,793 - INFO - Chat input: show summary of 2024
+2026-05-01 16:16:41,418 - INFO - Response: \U0001f4ca 5/2026 \u2192 Income \u20b985000, Expense \u20b90, Balance \u20b985000
+2026-05-01 16:34:57,972 - INFO - Chat input: SHOW ME THE SUMMARY OF 2024
+2026-05-01 16:35:01,253 - INFO - Response: \U0001f4ca 12/2024 \u2192 Income \u20b90, Expense \u20b90, Balance \u20b90
+2026-05-01 16:35:07,277 - INFO - Chat input: SHOW ME THE SUMMARY OF 2026
+2026-05-01 16:35:08,967 - INFO - Response: \U0001f4ca 5/2026 \u2192 Income \u20b985000, Expense \u20b90, Balance \u20b985000
+2026-05-01 16:35:53,762 - INFO - \U0001f680 Gradio App Started
+2026-05-01 16:35:54,403 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-05-01 16:35:54,448 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-05-01 16:35:54,665 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-05-01 16:35:54,930 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-05-01 16:35:55,585 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-05-01 16:36:13,789 - INFO - Chat input: show me the summary of this year
+2026-05-01 16:36:14,965 - INFO - Response: \U0001f4ca 2026 Summary: +\u20b9200000 | -\u20b913415 | Balance \u20b9186585
+2026-05-01 16:36:23,973 - INFO - Chat input: show me the summary of 2026
+2026-05-01 16:36:26,220 - INFO - Response: \U0001f4ca 5/2026 \u2192 Income \u20b985000, Expense \u20b90, Balance \u20b985000
+2026-05-01 16:36:32,210 - INFO - Chat input: show me the summary of 2024
+2026-05-01 16:36:33,542 - INFO - Response: \U0001f4ca 1/2026 \u2192 Income \u20b985000, Expense \u20b90, Balance \u20b985000
+2026-05-01 16:36:45,864 - INFO - Chat input: show me the summary of 2024
+2026-05-01 16:36:47,375 - INFO - Response: \U0001f4ca 1/2024 \u2192 Income \u20b90, Expense \u20b9-200, Balance \u20b9200
+2026-05-01 16:36:55,926 - INFO - Fetching admin data
+2026-05-01 16:44:04,680 - INFO - Chat input: show me the summary 2026
+2026-05-01 16:44:04,695 - INFO - Response: \u274c Error: cannot access local variable 'datetime' where it is not associated with a value
+2026-05-01 16:44:13,413 - INFO - Chat input: show me the summary 2024
+2026-05-01 16:44:13,417 - INFO - Response: \u274c Error: cannot access local variable 'datetime' where it is not associated with a value
+2026-05-01 16:47:50,893 - INFO - Chat input: show me the summary of 2026
+2026-05-01 16:47:52,509 - INFO - Response: \U0001f4ca 2026 Summary: +\u20b9200000 | -\u20b913415 | Balance \u20b9186585
+2026-05-01 16:47:56,757 - INFO - Chat input: show me the summary of 2024
+2026-05-01 16:47:56,897 - INFO - Response: \U0001f4ca 2024 Summary: +\u20b90 | -\u20b975400 | Balance \u20b9-75400
+2026-05-01 16:48:10,032 - INFO - Chat input: show me the summary of 2026
+2026-05-01 16:48:10,525 - INFO - Response: \U0001f4ca 2026 Summary: +\u20b9200000 | -\u20b913415 | Balance \u20b9186585
+2026-05-01 16:48:23,663 - INFO - Chat input: show me the summary of this year
+2026-05-01 16:48:24,273 - INFO - Response: \U0001f4ca 2026 Summary: +\u20b9200000 | -\u20b913415 | Balance \u20b9186585
+2026-05-01 16:48:44,222 - INFO - Chat input: give me a advice for saving 1000 every month
+2026-05-01 16:48:45,084 - INFO - Response: To save $1000 per month, consider the 50/30/20 rule. Allocate 50% of your income towards necessary expenses (housing, utilities, food), 30% for discretionary spending, and 20% for saving and debt repayment. 
+
+Assuming a $4000 monthly income, you'd allocate $2000 for necessary expenses, $1200 for discretionary spending, and $800 for saving and debt repayment. This leaves you with $200 for additional savings or adjustments.
+
+To reach your goal of saving $1000 per month, consider increasing your income or reducing your necessary expenses. You may also need to adjust your discretionary spending.
+
+Keep in mind that this is a general guideline, and your specific situation may vary. It's essential to review your budget and make adjustments accordingly.
+
+Would you like to log your income and expenses to get a better understanding of your financial situation?
+2026-05-01 16:57:23,669 - INFO - Chat input: hio
+2026-05-01 16:57:25,047 - INFO - Response: It seems like you're trying to start a conversation, but I'm not sure what you'd like to discuss. Could you please provide more context or ask a specific question about personal finance? I'm here to help with logging expenses, income, and providing summaries and balances.
+2026-05-01 16:57:25,398 - INFO - Chat input: hi
+2026-05-01 16:57:25,651 - INFO - Response: Hello. I'm here to help with your personal finance. What would you like to do today?
+2026-05-01 16:57:30,851 - INFO - Chat input: hi
+2026-05-01 16:57:31,459 - INFO - Response: It seems like we're starting a conversation. I'm here to help with personal finance. What would you like to do today?
+2026-05-01 16:57:53,747 - INFO - \U0001f680 Gradio App Started
