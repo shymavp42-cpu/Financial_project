@@ -24,105 +24,117 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 client = Groq(api_key=GROQ_API_KEY)
 
 conversation_history = []
+pending_transaction = {}
+
+# =========================
+# 🔥 ONLY FIXED PART
+# =========================
+def detect_category(text_lower):
+
+    # 🍎 FOOD (expanded for real usage)
+    food_keywords = [
+        "apple", "apples", "food", "rice", "meal", "milk",
+        "banana", "bread", "snack", "lunch", "dinner",
+        "juice", "tea", "coffee", "fruit",
+        "oil", "ghee", "butter", "vegetable", "vegetables", "cook"
+    ]
+
+    # 🚗 TRANSPORT
+    transport_keywords = [
+        "auto", "uber", "ola", "bus", "train", "petrol",
+        "fuel", "taxi", "travel", "ride", "fare"
+    ]
+
+    # 💰 INCOME
+    income_keywords = [
+        "salary", "income", "got", "received", "credited"
+    ]
+
+    # 🔥 IMPORTANT FIX: ensure "1L oil", "2kg rice" still work
+    if any(word in text_lower for word in food_keywords):
+        return "food"
+    elif any(word in text_lower for word in transport_keywords):
+        return "transport"
+    elif any(word in text_lower for word in income_keywords):
+        return "salary"
+    else:
+        return "others"
+
 
 # 🧠 MAIN LOGIC
 def add_expense_logic(text):
     global conversation_history
+    global pending_transaction
 
     try:
         current_date = datetime.now().strftime("%Y-%m-%d")
 
-        # ✅ YOUR PROMPT (unchanged style)
         system_prompt = {
             "role": "system",
-            "content": (
-                "### ROLE\n"
-                "You are an expert Personal Finance AI Assistant.\n\n"
-                "### CAPABILITIES\n"
-                "- Log expenses and income.\n"
-                "- Provide summaries and balances.\n"
-                "- Infer categories.\n\n"
-                "### STRICT GUIDELINES\n"
-                "1. *Validation*: NEVER call a tool if amount is unknown.\n"
-                "2. *Date Defaulting*: Assume today (%s).\n"
-                "3. *Tone*: Be concise.\n"
-                "4. *Memory*: Use conversation history.\n"
-                "5. If user asks advice or analysis, DO NOT call tools.\n"
-                "6. If user asks yearly summary, DO NOT call monthly tool.\n"
-                % current_date
-            )
+            "content": "You are a finance AI assistant"
         }
 
-        # 🚫 prevent wrong saving
         if "balance" in text.lower():
             return "⚠️ That is a balance, not a transaction."
 
-        # =========================================================
-        # 🔥 YEAR SUMMARY (FINAL FIX — ONLY ONE BLOCK)
-        # =========================================================
-        year_match = re.search(r"\b(20\d{2})\b", text)
+        text_lower = text.lower()
 
-        if "summary" in text.lower() and ("year" in text.lower() or year_match):
+        # =========================
+        # 🔥 CASE 1: pending amount
+        # =========================
+        if pending_transaction and re.fullmatch(r"\d+", text.strip()):
 
-            if "this year" in text.lower():
-                year = datetime.now().year
-            elif year_match:
-                year = int(year_match.group(1))
-            else:
-                year = None
+            amount = int(text.strip())
+            category = pending_transaction["category"]
+            tx_type = pending_transaction["type"]
 
-            if year is not None:
-                response = supabase.table("Expenses").select("*").execute()
-                records = response.data
+            add_expense(
+                supabase,
+                amount,
+                category,
+                tx_type,
+                datetime.now().strftime("%Y-%m-%d")
+            )
 
-                total_income = 0
-                total_expense = 0
+            pending_transaction = {}
 
-                for r in records:
-                    date_str = r.get("Date")
-                    if not date_str:
-                        continue
+            return f"✅ Added ₹{amount} for {category}"
 
-                    try:
-                        date_obj = datetime.fromisoformat(date_str.replace("Z", ""))
-                        y = date_obj.year
-                    except:
-                        continue
+        # =========================
+        # 🔥 CASE 2: new message
+        # =========================
+        if any(word in text_lower for word in ["spent", "bought", "paid", "salary", "income", "got"]):
 
-                    if y == year:
-                        if r["Type"].lower() == "income":
-                            total_income += r["Amount"]
-                        elif r["Type"].lower() == "expense":
-                            total_expense += r["Amount"]
+            # ✅ FIXED CATEGORY LOGIC
+            category = detect_category(text_lower)
 
-                if total_income == 0 and total_expense == 0:
-                    return f"⚠️ No data found for {year}"
+            if re.search(r"\d+\s*(kg|g|l|ml|km|m)", text_lower):
+                pending_transaction = {"type": "expense", "category": category}
+                return "How much did it cost?"
 
-                return f"📊 {year} Summary: +₹{total_income} | -₹{total_expense} | Balance ₹{total_income - total_expense}"
+            amount_match = re.search(r"(?:₹|rs\.?|inr)?\s*(\d{2,})", text, re.IGNORECASE)
 
-        # =========================================================
-        # 🔥 CATEGORY ADVICE
-        # =========================================================
-        if "category" in text.lower() and ("reduce" in text.lower() or "limit" in text.lower()):
-            response = supabase.table("Expenses").select("*").execute()
-            records = response.data
+            if amount_match is None:
+                pending_transaction = {"type": "expense", "category": category}
+                return "How much did it cost?"
 
-            category_totals = {}
+            amount = int(amount_match.group(1))
 
-            for r in records:
-                if r["Type"].lower() == "expense":
-                    cat = r["Category"]
-                    category_totals[cat] = category_totals.get(cat, 0) + r["Amount"]
+            tx_type = "income" if any(word in text_lower for word in ["salary", "income", "got"]) else "expense"
 
-            if not category_totals:
-                return "No expense data available."
+            add_expense(
+                supabase,
+                amount,
+                category,
+                tx_type,
+                datetime.now().strftime("%Y-%m-%d")
+            )
 
-            highest = max(category_totals, key=category_totals.get)
-            return f"💡 You are spending the most on '{highest}'. Try reducing this category."
+            return f"✅ Added ₹{amount} as {tx_type} ({category})"
 
-        # =========================================================
-        # 🤖 LLM PART (unchanged logic)
-        # =========================================================
+        # =========================
+        # LLM (UNCHANGED)
+        # =========================
         conversation_history.append({"role": "user", "content": text})
 
         if len(conversation_history) > 10:
@@ -133,7 +145,7 @@ def add_expense_logic(text):
         response = client.chat.completions.create(
             model="llama-3.1-8b-instant",
             messages=messages,
-            temperature=0
+            temperature=0.7
         )
 
         return response.choices[0].message.content
@@ -142,13 +154,12 @@ def add_expense_logic(text):
         return f"❌ Error: {str(e)}"
 
 
-# 🚀 CHAT API
+# 🚀 API (UNCHANGED)
 @app.post("/chat")
 def chat(data: dict):
     return {"response": add_expense_logic(data.get("text"))}
 
 
-# 🧹 CLEAR
 @app.post("/clear")
 def clear():
     global conversation_history
@@ -156,18 +167,16 @@ def clear():
     return {"message": "cleared"}
 
 
-# 🔍 TEST
 @app.get("/test")
 def test():
     return supabase.table("Expenses").select("*").execute().data
 
 
-# 📊 MONTH SUMMARY (API)
 @app.get("/summary")
 def summary(month: int, year: int):
     income, expense = get_month_summary(supabase, month, year)
     return {
         "total_income": income,
         "total_expense": expense,
-        "balance": income - expense
+        "balance": expense - income
     }

@@ -519,3 +519,43 @@ Would you like to log your income and expenses to get a better understanding of 
 2026-05-01 16:57:30,851 - INFO - Chat input: hi
 2026-05-01 16:57:31,459 - INFO - Response: It seems like we're starting a conversation. I'm here to help with personal finance. What would you like to do today?
 2026-05-01 16:57:53,747 - INFO - \U0001f680 Gradio App Started
+2026-05-01 16:57:54,555 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-05-01 16:57:54,578 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-05-01 16:57:54,911 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-05-01 16:57:55,032 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-05-01 16:57:55,437 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-05-01 16:58:00,017 - INFO - Chat input: hi
+2026-05-01 16:58:00,584 - INFO - Response: It seems like we're starting a conversation. I'm here to help with personal finance. What would you like to do today?
+2026-05-01 19:43:32,718 - INFO - \U0001f680 Gradio App Started
+2026-05-01 19:43:34,354 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-05-01 19:43:34,896 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-05-01 19:43:34,930 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-05-01 19:43:35,229 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
+2026-05-01 19:43:35,233 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-05-01 19:44:15,172 - INFO - Chat input: hi
+2026-05-01 19:44:15,854 - INFO - Response: Welcome to our personal finance assistant. I'll be happy to help you manage your finances. What would you like to do today?
+2026-05-01 19:45:40,211 - INFO - Chat input: i spent 200 on food today
+2026-05-01 19:45:41,023 - INFO - Response: I've logged your expense for today. Your current balance is unknown since I don't have a starting balance. Would you like to add a starting balance or log another expense?
+2026-05-01 19:46:07,876 - INFO - Chat input: i spent 200 on food today
+2026-05-01 19:46:08,348 - INFO - Response: I've logged your expense for today. Your current balance is $[unknown]. To get an accurate balance, I need to know your income for the month.
+2026-05-01 19:57:10,043 - INFO - Chat input: hi
+2026-05-01 19:57:10,075 - INFO - Response: \u274c Error: cannot access local variable 'amount_match' where it is not associated with a value
+2026-05-01 19:57:21,428 - INFO - Chat input: hi
+2026-05-01 19:57:21,435 - INFO - Response: \u274c Error: cannot access local variable 'amount_match' where it is not associated with a value
+2026-05-01 19:59:02,946 - INFO - Chat input: hi
+2026-05-01 19:59:02,960 - INFO - Response: \u274c Error: cannot access local variable 'amount_match' where it is not associated with a value
+2026-05-01 20:09:56,944 - INFO - Chat input: hi
+2026-05-01 20:10:01,621 - INFO - Response: \u274c Error: cannot access local variable 'amount' where it is not associated with a value
+2026-05-01 20:10:10,233 - INFO - Chat input: hi 200
+2026-05-01 20:10:10,245 - INFO - Response: \u274c Error: cannot access local variable 'amount' where it is not associated with a value
+2026-05-01 20:10:51,913 - INFO - Chat input: hi
+2026-05-01 20:10:51,924 - INFO - Response: \u274c Error: cannot access local variable 'amount' where it is not associated with a value
+2026-05-01 20:10:54,934 - INFO - Chat input: hi
+2026-05-01 20:10:54,947 - INFO - Response: \u274c Error: cannot access local variable 'amount' where it is not associated with a value
+2026-05-01 20:18:23,794 - INFO - Chat input: hi
+2026-05-01 20:18:23,806 - INFO - Response: \u274c Error: cannot access local variable 'amount' where it is not associated with a value
+2026-05-01 20:24:05,416 - INFO - \U0001f680 Gradio App Started
+2026-05-01 20:24:06,020 - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-05-01 20:24:06,048 - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2026-05-01 20:24:06,534 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-initiated-analytics "HTTP/1.1 200 OK"
+2026-05-01 20:24:06,630 - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/https%3A/api.gradio.app/gradio-launched-telemetry "HTTP/1.1 200 OK"
